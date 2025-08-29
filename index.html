@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Vibe Calculator</h1>
+        
+        <!-- Calculator Section -->
+        <div class="calculator-section">
+            <h2>Calculator</h2>
+            <div class="calculator">
+                <div class="display">
+                    <input type="text" id="display" readonly>
+                </div>
+                <div class="buttons">
+                    <button onclick="clearDisplay()">C</button>
+                    <button onclick="deleteLast()">⌫</button>
+                    <button onclick="appendToDisplay('/')">/</button>
+                    <button onclick="appendToDisplay('*')">×</button>
+                    
+                    <button onclick="appendToDisplay('7')">7</button>
+                    <button onclick="appendToDisplay('8')">8</button>
+                    <button onclick="appendToDisplay('9')">9</button>
+                    <button onclick="appendToDisplay('-')">-</button>
+                    
+                    <button onclick="appendToDisplay('4')">4</button>
+                    <button onclick="appendToDisplay('5')">5</button>
+                    <button onclick="appendToDisplay('6')">6</button>
+                    <button onclick="appendToDisplay('+')">+</button>
+                    
+                    <button onclick="appendToDisplay('1')">1</button>
+                    <button onclick="appendToDisplay('2')">2</button>
+                    <button onclick="appendToDisplay('3')">3</button>
+                    <button onclick="calculate()" class="equals">=</button>
+                    
+                    <button onclick="appendToDisplay('0')" class="zero">0</button>
+                    <button onclick="appendToDisplay('.')">.</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Currency Converter Section -->
+        <div class="currency-section">
+            <h2>Currency Converter</h2>
+            <div class="currency-converter">
+                <div class="input-group">
+                    <label for="amount">Amount:</label>
+                    <input type="number" id="amount" placeholder="Enter amount" value="1">
+                </div>
+                
+                <div class="input-group">
+                    <label for="fromCurrency">From:</label>
+                    <select id="fromCurrency">
+                        <option value="USD">USD - US Dollar</option>
+                        <option value="EUR">EUR - Euro</option>
+                        <option value="GBP">GBP - British Pound</option>
+                        <option value="JPY">JPY - Japanese Yen</option>
+                        <option value="CAD">CAD - Canadian Dollar</option>
+                        <option value="AUD">AUD - Australian Dollar</option>
+                        <option value="CHF">CHF - Swiss Franc</option>
+                        <option value="CNY">CNY - Chinese Yuan</option>
+                        <option value="INR">INR - Indian Rupee</option>
+                    </select>
+                </div>
+                
+                <div class="input-group">
+                    <label for="toCurrency">To:</label>
+                    <select id="toCurrency">
+                        <option value="EUR">EUR - Euro</option>
+                        <option value="USD">USD - US Dollar</option>
+                        <option value="GBP">GBP - British Pound</option>
+                        <option value="JPY">JPY - Japanese Yen</option>
+                        <option value="CAD">CAD - Canadian Dollar</option>
+                        <option value="AUD">AUD - Australian Dollar</option>
+                        <option value="CHF">CHF - Swiss Franc</option>
+                        <option value="CNY">CNY - Chinese Yuan</option>
+                        <option value="INR">INR - Indian Rupee</option>
+                    </select>
+                </div>
+                
+                <button onclick="convertCurrency()">Convert</button>
+                
+                <div class="result" id="currencyResult">
+                    Result will appear here
+                </div>
+            </div>
+        </div>
+        
+        <!-- World Clock Section -->
+        <div class="clock-section">
+            <h2>World Clock</h2>
+            <div class="world-clock">
+                <div class="time-zones">
+                    <div class="time-zone">
+                        <h3>New York</h3>
+                        <p id="new-york-time">--:--:--</p>
+                    </div>
+                    <div class="time-zone">
+                        <h3>London</h3>
+                        <p id="london-time">--:--:--</p>
+                    </div>
+                    <div class="time-zone">
+                        <h3>Tokyo</h3>
+                        <p id="tokyo-time">--:--:--</p>
+                    </div>
+                    <div class="time-zone">
+                        <h3>Sydney</h3>
+                        <p id="sydney-time">--:--:--</p>
